@@ -6,7 +6,8 @@ public class ChangeColors : MonoBehaviour
 {
     public Renderer player;
     public GameObject ColorSwitcher;
-    private string TheColor = "White"; 
+    private string TheColor = "White";
+    public GameObject particle1 , particle2;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class ChangeColors : MonoBehaviour
         else if (col.tag != TheColor)
         {
             Destroy(gameObject);
+            
         }
     }
     public void ColorChanger()
