@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movment : MonoBehaviour
@@ -7,12 +5,8 @@ public class Movment : MonoBehaviour
     public Rigidbody2D rb;
     public float Jump = 15f;
     private int ClicksCounter = 0;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator IsPressingTheButton ;
+    public GameObject PressToStart ;
 
     // Update is called once per frame
     void Update()
@@ -23,6 +17,8 @@ public class Movment : MonoBehaviour
             if (ClicksCounter == 1)
             {
                 rb.velocity = Vector2.up * (Jump+5) ;
+                IsPressingTheButton.Play("Pressing");
+                Destroy(PressToStart, 5); 
             }
             else
             {

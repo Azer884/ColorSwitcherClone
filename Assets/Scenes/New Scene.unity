@@ -1168,7 +1168,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323840464}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2.5
   simulationSpeed: 5
   stopAction: 0
   cullingMode: 0
@@ -1243,7 +1243,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1735,7 +1735,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5980,7 +5980,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430710630}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2.5
   simulationSpeed: 5
   stopAction: 0
   cullingMode: 0
@@ -6055,7 +6055,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6547,7 +6547,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10849,6 +10849,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1856516099}
   Jump: 15
+  IsPressingTheButton: {fileID: 2040659077}
+  PressToStart: {fileID: 2040659072}
 --- !u!50 &1856516099
 Rigidbody2D:
   serializedVersion: 4
@@ -11072,6 +11074,7 @@ GameObject:
   - component: {fileID: 2040659075}
   - component: {fileID: 2040659074}
   - component: {fileID: 2040659076}
+  - component: {fileID: 2040659077}
   m_Layer: 5
   m_Name: Press To Start
   m_TagString: Untagged
@@ -11119,7 +11122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press <sprite="StyleSheet_Mouse" name="Mouse_Left">To Start
+  m_text: 'Press <sprite="StyleSheet_Xbox" name="Xbox_A">To Start
 
 '
   m_isRightToLeft: 0
@@ -11148,7 +11151,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.8
+  m_fontSize: 42.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11210,6 +11213,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8472d11d0c9c084c9b8465340fa996e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2040659077
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040659072}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 404b14a2d3a50f449bcd919514e94c29, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2103116524
 GameObject:
   m_ObjectHideFlags: 0

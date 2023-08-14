@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-4625881514604232135
+--- !u!21 &-994801820740347302
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 1
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b16f44a5f153efe4888155ebc1a0d925, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6f60d999bf0be2b4fae81791676d42b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
-  m_Name: StyleSheet_Xbox
+  m_Name: StyleSheet_Keyboard
   m_EditorClassIdentifier: 
-  hashCode: 2072504336
-  material: {fileID: -4625881514604232135}
+  hashCode: -660855891
+  material: {fileID: -994801820740347302}
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
@@ -76,14 +76,14 @@ MonoBehaviour:
     m_StrikethroughOffset: 0
     m_StrikethroughThickness: 0
     m_TabWidth: 0
-  spriteSheet: {fileID: 2800000, guid: b16f44a5f153efe4888155ebc1a0d925, type: 3}
+  spriteSheet: {fileID: 2800000, guid: 6f60d999bf0be2b4fae81791676d42b3, type: 3}
   m_SpriteCharacterTable:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 0
-    m_Scale: 1.75
-    m_Name: Xbox_A
-    m_HashCode: -890235853
+    m_Scale: 2
+    m_Name: Space
+    m_HashCode: 99043428
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -100,6 +100,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-    sprite: {fileID: 21300000, guid: b16f44a5f153efe4888155ebc1a0d925, type: 3}
+    sprite: {fileID: 21300000, guid: 6f60d999bf0be2b4fae81791676d42b3, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []

@@ -1,64 +1,76 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class InputDeviceDetector : MonoBehaviour
 {
+    private TextMeshProUGUI textMeshPro;
+    void Start()
+    {
+        // Access the TextMeshProUGUI component on the GameObject
+        textMeshPro = GetComponent<TextMeshProUGUI>();
+    }
     void Update()
     {
         if (Input.anyKeyDown && !CheckForAnyMouseInput() && !CheckForXboxControllerInput())
         {
-            Debug.Log("Keyboard Input Detected");
+            string newText = textMeshPro.text = "Press <sprite=\"StyleSheet_Keyboard\" name=\"Space\">To Start";
+            textMeshPro.text = newText;
         }
 
         if (CheckForAnyMouseInput())
         {
-            Debug.Log("Mouse Input Detected");
+            string newText1 = textMeshPro.text = "Press <sprite=\"StyleSheet_Mouse\" name=\"Mouse_Left\">To Start";
+            textMeshPro.text = newText1;
         }
 
         if (CheckForXboxControllerInput())
         {
-            Debug.Log("Controller Input Detected");
+            string newText2 = textMeshPro.text = "Press <sprite=\"StyleSheet_Xbox\" name=\"Xbox_A\">To Start";
+            textMeshPro.text = newText2;
         }
     }
 
     private bool CheckForXboxControllerInput()
     {
-        bool aButtonPressed = Input.GetKey(KeyCode.JoystickButton0);  // A
-        bool bButtonPressed = Input.GetKey(KeyCode.JoystickButton1);  // B
-        bool xButtonPressed = Input.GetKey(KeyCode.JoystickButton2);  // X
-        bool yButtonPressed = Input.GetKey(KeyCode.JoystickButton3);  // Y
+        // Check Xbox controller buttons using KeyCode values
+        bool aButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton0);
+        bool bButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton1);
+        bool xButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton2);
+        bool yButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton3);
 
-        bool leftBumperPressed = Input.GetKey(KeyCode.JoystickButton4);   // Left Bumper
-        bool rightBumperPressed = Input.GetKey(KeyCode.JoystickButton5);  // Right Bumper
+        bool leftBumperPressed = Input.GetKeyDown(KeyCode.JoystickButton4);
+        bool rightBumperPressed = Input.GetKeyDown(KeyCode.JoystickButton5);
 
-        bool backButtonPressed = Input.GetKey(KeyCode.JoystickButton6);  // Back
-        bool startButtonPressed = Input.GetKey(KeyCode.JoystickButton7);  // Start
+        bool backButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton6);
+        bool startButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton7);
 
-        bool leftStickButtonPressed = Input.GetKey(KeyCode.JoystickButton8);   // Left Stick Button
-        bool rightStickButtonPressed = Input.GetKey(KeyCode.JoystickButton9);  // Right Stick Button
+        bool leftStickButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton8);
+        bool rightStickButtonPressed = Input.GetKeyDown(KeyCode.JoystickButton9);
 
-        float leftStickX = Input.GetAxis("Horizontal");
-        float leftStickY = Input.GetAxis("Vertical");
+        // Check Xbox controller triggers as buttons using KeyCode values
+        bool leftTriggerPressed = Input.GetAxis("LeftTrigger") > 0.1f;
+        bool rightTriggerPressed = Input.GetAxis("RightTrigger") > 0.1f;
 
-        float rightStickX = Input.GetAxis("RightStickHorizontal");
-        float rightStickY = Input.GetAxis("RightStickVertical");
-
-        float leftTrigger = Input.GetAxis("Xbox_LeftTrigger");
-        float rightTrigger = Input.GetAxis("Xbox_RightTrigger");
+        // Get Xbox controller joystick axes
+        float leftStickX = Input.GetAxis("Horizontal1");
+        float leftStickY = Input.GetAxis("Vertical1");
+        float rightStickX = Input.GetAxis("Horizontal2");
+        float rightStickY = Input.GetAxis("Vertical2");
 
         if (aButtonPressed || bButtonPressed || xButtonPressed || yButtonPressed ||
             leftBumperPressed || rightBumperPressed ||
             backButtonPressed || startButtonPressed ||
             leftStickButtonPressed || rightStickButtonPressed ||
+            leftTriggerPressed || rightTriggerPressed ||
             Mathf.Abs(leftStickX) > 0.1f || Mathf.Abs(leftStickY) > 0.1f ||
-            Mathf.Abs(rightStickX) > 0.1f || Mathf.Abs(rightStickY) > 0.1f ||
-            Mathf.Abs(leftTrigger) > 0.1f || Mathf.Abs(rightTrigger) > 0.1f)
+            Mathf.Abs(rightStickX) > 0.1f || Mathf.Abs(rightStickY) > 0.1f)
         {
             return true;
         }
 
         return false;
     }
+
     
     private bool CheckForAnyMouseInput()
     {
