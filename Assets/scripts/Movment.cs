@@ -7,7 +7,9 @@ public class Movment : MonoBehaviour
     private int ClicksCounter = 0;
     public Animator IsPressingTheButton ;
     public GameObject PressToStart ;
-
+    public AudioSource src ;
+    public AudioClip sfx1 ;
+ 
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +26,9 @@ public class Movment : MonoBehaviour
             {
                 rb.velocity = Vector2.up * Jump;
             }
+            src.clip = sfx1;
+            src.pitch = 0.7f ;
+            src.Play();
             
         }
           
